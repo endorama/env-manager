@@ -1,0 +1,7 @@
+/doc/
+/libs/
+/.crystal/
+/.shards/
+# skip exe compiled files
+/exe/*
+!/exe/*.cr

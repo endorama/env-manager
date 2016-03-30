@@ -1,0 +1,10 @@
+version: 1.0
+shards:
+  ambience:
+    github: vjdhama/ambience
+    version: 0.3.8
+
+  commander:
+    github: meskyanichi/commander
+    version: 0.3.2
+

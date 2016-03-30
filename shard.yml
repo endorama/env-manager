@@ -1,0 +1,15 @@
+name: env-manager
+version: 0.1.0
+
+authors:
+  - Edoardo Tenani <edoardo.tenani@gmail.com>
+
+license: MIT
+
+dependencies:
+  commander:
+    github: meskyanichi/commander
+    version: ~> 0.3.2
+  ambience:
+    github: vjdhama/ambience
+    version: ~> 0.3.7
