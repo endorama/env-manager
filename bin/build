@@ -3,4 +3,4 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-crystal build exe/env-manager.cr -o exe/env-manager
+crystal build exe/envs.cr -o exe/envs

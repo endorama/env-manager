@@ -2,11 +2,11 @@ require "commander"
 require "ambience"
 require "colorize"
 
-Env::Manager.load_envs
+Envs.load_envs
 
-require "./env-manager/*"
+require "./envs/*"
 
-module Env::Manager
+module Envs
   def self.load_envs
     env_file = nil
     local_env_file = File.expand_path(".env", __DIR__)

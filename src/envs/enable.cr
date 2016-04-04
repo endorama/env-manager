@@ -1,7 +1,7 @@
-module Env::Manager
+module Envs
   def self.enable(env)
-    enabled_env_path = Env::Manager::ENABLED_ENV_PATH
-    disabled_env_path = Env::Manager::DISABLED_ENV_PATH
+    enabled_env_path = Envs::ENABLED_ENV_PATH
+    disabled_env_path = Envs::DISABLED_ENV_PATH
 
     if File.exists? "#{enabled_env_path}/#{env}.sh"
       return true
