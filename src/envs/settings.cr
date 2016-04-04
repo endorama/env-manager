@@ -1,4 +1,4 @@
-module Env::Manager
+module Envs
   ENABLED_ENV_PATH = "/etc/profile.d/dotfiles"
   # DISABLED_ENV_PATH = File.expand_path("~/.dotfiles/envs")
   DISABLED_ENV_PATH = "/home/endorama/code/github/endorama/dotfiles-new/envs"

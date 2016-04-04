@@ -1,7 +1,7 @@
-require "../src/env-manager"
+require "../src/envs"
 
-puts Env::Manager::ENABLED_ENV_PATH
-puts Env::Manager::DISABLED_ENV_PATH
+puts Envs::ENABLED_ENV_PATH
+puts Envs::DISABLED_ENV_PATH
 
 cli = Commander::Command.new do |cmd|
   cmd.use = "env-manager"
@@ -23,9 +23,9 @@ cli = Commander::Command.new do |cmd|
 
       env = arguments[0]
 
-      if Env::Manager.disable env
+      if Envs.disable env
         puts %{#{"✔".colorize(:green)} #{env} disabled}
-        puts "link #{Env::Manager::ENABLED_ENV_PATH}/#{env}.sh removed"
+        puts "link #{Envs::ENABLED_ENV_PATH}/#{env}.sh removed"
       else
         STDERR.puts %{#{"✖".colorize(:red)} Cannot disable #{env}}
         exit 1
@@ -45,9 +45,9 @@ cli = Commander::Command.new do |cmd|
 
       env = arguments[0]
 
-      if Env::Manager.enable env
+      if Envs.enable env
         puts %{#{"✔".colorize(:green)} #{env} enabled}
-        puts "link #{Env::Manager::ENABLED_ENV_PATH}/#{env}.sh created"
+        puts "link #{Envs::ENABLED_ENV_PATH}/#{env}.sh created"
       else
         STDERR.puts %{#{"✖".colorize(:red)} Cannot enable #{env}}
         exit 1
@@ -60,7 +60,7 @@ cli = Commander::Command.new do |cmd|
     cmd.short = "list all available envs"
     cmd.long = cmd.short
     cmd.run do |options, arguments|
-      envs = Env::Manager.list
+      envs = Envs.list
       envs[0].each do |enabled_env|
         puts %{#{"✔".colorize(:green)} #{enabled_env}}
       end
@@ -75,7 +75,7 @@ cli = Commander::Command.new do |cmd|
     cmd.short = "display version"
     cmd.long = cmd.short
     cmd.run do |options, arguments|
-      puts Env::Manager::VERSION
+      puts Envs::VERSION
     end
   end
 end

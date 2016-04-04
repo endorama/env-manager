@@ -1,2 +1,2 @@
 require "spec"
-require "../src/env-manager"
+require "../src/envs"
